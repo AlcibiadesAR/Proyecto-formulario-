@@ -1,0 +1,58 @@
+body{
+    font-family: "Roboto", sans-serif;
+    background-color: rgb(237, 237, 235);
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#registroFormulario{
+    background-color: rgb(211, 211, 205);
+    padding: 25px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px black;
+}
+
+label{
+    display: block;
+    margin-bottom: 5px;
+}
+
+label.inline{
+    display: inline-block;
+}
+
+input, select{
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+    margin: 15px 0 10px 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select{
+    width: 100%
+}
+
+input[type="submit"]{
+    background-color: rgb(64, 145, 225);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 7px;
+    width: 100%;
+    cursor: pointer;
+    transition: .5s ease;
+}
+
+input[type="submit"]:hover{
+    background-color: rgb(9, 119, 230);
+}
+
