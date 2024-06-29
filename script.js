@@ -1,6 +1,33 @@
 submitFunction = (event) => {
-  validarFormulario();
   event.preventDefault();
+  if (!validarFormulario()) {
+    event.preventDefault();
+  } else {
+    event.preventDefault();
+
+    alert(
+      "Los Datos enviados fueron: " +
+        "\n" +
+        "nombre: " +
+        document.getElementById("nombre").value +
+        "\n" +
+        "Apellido: " +
+        document.getElementById("apellido").value +
+        "\n" +
+        "Email: " +
+        document.getElementById("email").value +
+        "\n" +
+        "Edad: " +
+        document.getElementById("edad").value +
+        "\n" +
+        "Actividad: " +
+        document.getElementById("actividad").value +
+        "\n" +
+        "Nivel de estudio: " +
+        document.getElementById("nivelEstudio").value +
+        "\n"
+    );
+  }
 };
 
 document
@@ -32,39 +59,56 @@ const validarFormulario = () => {
   if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoEmail.value)) {
     ocultarError(errorEmail);
   } else {
-    mostrarError(errorEmail, '¡Ingrese un correo electrónico válido!');
+    mostrarError(errorEmail, "¡Ingrese un correo electrónico válido!");
   }
 
-  const campoEdad = document.getElementById('edad');
-  let errorEdad = document.getElementById('errorEdad');
+  const campoEdad = document.getElementById("edad");
+  let errorEdad = document.getElementById("errorEdad");
 
-  if (campoEdad.value < 18){
-    mostrarError(errorEdad, '¡Debes ser mayor de edad para registrarte!')
+  if (campoEdad.value < 18) {
+    mostrarError(errorEdad, "¡Debes ser mayor de edad para registrarte!");
     validacion = false;
-  } else{
+  } else {
     ocultarError(errorEdad);
   }
 
-  const actividad = document.getElementById('actividad');
-  const errorActividad = document.getElementById('errorActividad');
+  const actividad = document.getElementById("actividad");
+  const errorActividad = document.getElementById("errorActividad");
 
-  if (actividad.value == ''){
-    mostrarError(errorActividad, '¡Por favor, selecciona una actividad!')
+  if (actividad.value == "") {
+    mostrarError(errorActividad, "¡Por favor, selecciona una actividad!");
     validacion = false;
-  } else{
+  } else {
     ocultarError(errorActividad);
   }
 
-  const nivelEstudio = document.getElementById('nivelEstudio');
-  const errorNivelEstudio = document.getElementById('errorNivelEstudio');
+  const nivelEstudio = document.getElementById("nivelEstudio");
+  const errorNivelEstudio = document.getElementById("errorNivelEstudio");
 
-  if (nivelEstudio.value == ''){
-    mostrarError(errorNivelEstudio, '¡Por favor, selecciona un nivel de estudio!')
+  if (nivelEstudio.value == "") {
+    mostrarError(
+      errorNivelEstudio,
+      "¡Por favor, selecciona un nivel de estudio!"
+    );
     validacion = false;
-  } else{
+  } else {
     ocultarError(errorNivelEstudio);
   }
 
+  const aceptoTerminos = document.getElementById("aceptoTerminos");
+  const errorAceptoTerminos = document.getElementById("errorAceptoTerminos");
+
+  if (!aceptoTerminos.checked) {
+    mostrarError(
+      errorAceptoTerminos,
+      "Debes aceptar los términos y condiciones"
+    );
+    validacion = false;
+  } else {
+    ocultarError(errorAceptoTerminos);
+  }
+
+  return validacion;
 };
 
 const mostrarError = (elemento, mensaje) => {
@@ -76,5 +120,4 @@ const ocultarError = (elemento) => {
   elemento.textContent = "";
   elemento.style.display = "none";
 };
-d
-
+d;

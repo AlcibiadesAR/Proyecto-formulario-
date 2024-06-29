@@ -53,11 +53,19 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    background-color: rgb(9, 119, 230);
+    background-color: rgb(25, 66, 108);
 }
 
 .error{
     color: red;
     font-size: 10px;
 }
+
+@media (min-width: 960px) {
+  
+    #registroFormulario{
+       width: 25%;
+    }
+    
+  }
 
